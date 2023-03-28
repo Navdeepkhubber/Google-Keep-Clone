@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="40px" height="40px"><path fill="#ffc107" d="M9,42h23l10-10V9c0-1.7-1.3-3-3-3H9C7.3,6,6,7.3,6,9v30C6,40.7,7.3,42,9,42z"/><path fill="#ffecb3" d="M32,42V32h10L32,42z"/><path fill="#fff" d="M28,36h-8v-7.9c-3.1-1.5-5-4.6-5-8.1c0-5,4-9,9-9c5,0,9,4,9,9c0,3.5-1.9,6.5-5,8.1V36z M22,34h4 v-7.3l0.6-0.3c2.7-1.1,4.4-3.6,4.4-6.5c0-3.9-3.1-7-7-7c-3.9,0-7,3.1-7,7c0,2.9,1.7,5.4,4.4,6.5l0.6,0.3V34z"/><path fill="#fff" d="M22 35h4v3h-4V35zM21 30H27V32H21z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Made by undefinedgilbarbara -->
+<svg width="352px" height="352px" viewBox="-48 0 352 352" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+    <g>
+        <path d="M232,352 L24,352 C10.72,352 0,341.28 0,328 L0,24 C0,10.72 10.72,0 24,0 L168,0 L256,88 L256,328 C256,341.28 245.28,352 232,352 Z" fill="#FFBA00"></path>
+        <polygon fill="#FF9500" points="168 0 256 88 168 88"></polygon>
+        <path d="M156,236 L156,256 L100,256 L100,236 L156,236 Z M127.92,120.001 L128.69995,120.006966 C157.023272,120.466144 179.84,143.5672 179.84,172 C179.84,190.56 170.12,206.8 155.52,216 L155.52,216 L100.32,216 C85.68,206.8 76,190.56 76,172 C76,143.28 99.28,120 128,120 L127.92,120.001 Z" fill="#FFFFFF"></path>
+    </g>
+</svg>
