@@ -1,21 +1,39 @@
 import "./App.css";
+import React, { useState } from "react";
 import Header from "./components/Header";
+import NoteArea from "./components/NoteArea";
 import Sidebar from "./components/Sidebar";
-import addIcon from "/add.svg";
-import addHover from "/addHover.svg";
+import Note from "./components/Note";
 
-function App() {
+function App(props) {
+  const [notes, setNotes] = useState([]);
+
+  function addNote(newNote) {
+    setNotes((prevNotes) => {
+      return [...prevNotes, newNote];
+    });
+  }
+
+  function deleteNotes(id) {
+    setNotes((prevNotes) => {
+      return [...prevNotes.filter((note, index) => index !== id)];
+    });
+  }
+
   return (
     <div className="App">
       <Header />
       <Sidebar />
-      <div className="noteTaking">
-        <textarea value="Take a note..." />
-        <div className="addNote">
-          <img src={addIcon} className="addIcon" alt="Add Note" />
-          <img src={addHover} className="addHover" alt="Add Hover Note" />
-        </div>
-      </div>
+      <NoteArea onAdd={addNote} />
+      {notes.map((note, index) => (
+        <Note
+          key={index}
+          id={index}
+          title={note.title}
+          content={note.content}
+          onDelete={deleteNotes}
+        />
+      ))}
     </div>
   );
 }
