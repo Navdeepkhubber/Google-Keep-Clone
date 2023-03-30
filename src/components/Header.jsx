@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import menuLogo from "/menu.svg";
-import keepLogo from "/keep.svg";
-import searchLogo from "/search.svg";
+import menuLogo from "/public/menu.svg";
+import keepLogo from "/public/keep.svg";
+import searchLogo from "/public/search.svg";
 import "./Header.css";
 import ToggleView from "./ToggleView";
 import ToggleTheme from "./ToggleTheme";

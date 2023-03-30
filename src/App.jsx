@@ -25,15 +25,17 @@ function App(props) {
       <Header />
       <Sidebar />
       <NoteArea onAdd={addNote} />
-      {notes.map((note, index) => (
-        <Note
-          key={index}
-          id={index}
-          title={note.title}
-          content={note.content}
-          onDelete={deleteNotes}
-        />
-      ))}
+      <div className="notes">
+        {notes.map((note, index) => (
+          <Note
+            key={index}
+            id={index}
+            title={note.title}
+            content={note.content}
+            onDelete={deleteNotes}
+          />
+        ))}
+      </div>
     </div>
   );
 }

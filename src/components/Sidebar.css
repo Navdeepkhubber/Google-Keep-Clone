@@ -12,26 +12,32 @@
   transition: width 0.1s;
 }
 
+.dark li a,
+.dark li a:hover {
+  color: white;
+}
+
+.dark li a:hover {
+  background-color: rgba(87, 87, 87, 0.2);
+}
+
+.dark .sidebar:hover {
+  background-color: #202124;
+}
+
 .sidebar:hover {
+  background-color: white;
   width: 300px;
   overflow: visible;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .bellIdle,
-.editIdle,
 .archiveIdle,
 .binIdle,
-.bulbBlack {
+.keepIdle {
   height: 20px;
   width: 20px;
-  cursor: pointer;
-  padding-left: 30px;
-}
-
-.keepBlack {
-  height: 24px;
-  width: 24px;
   cursor: pointer;
   padding-left: 30px;
 }
@@ -71,4 +77,23 @@ li p {
   padding-left: 45px;
   margin-left: 20px;
   font-weight: 500;
+}
+
+.sourceCode {
+  max-width: 80px;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 123px;
+  letter-spacing: 0.3px;
+}
+
+.sourceCode a,
+.sourceCode a:visited {
+  text-decoration: none;
+  color: #5f6368;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #5f6368;
 }
