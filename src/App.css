@@ -192,6 +192,7 @@ form textArea {
   font-size: 1rem;
   margin-bottom: 6px;
   text-align: left;
+  color: black;
 }
 
 .note p {

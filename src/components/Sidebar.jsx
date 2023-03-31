@@ -3,28 +3,34 @@ import keepIdle from "/Sidebar/keepIdle.svg";
 import bellIdle from "/Sidebar/bellIdle.svg";
 import archiveIdle from "/Sidebar/archiveIdle.svg";
 import binIdle from "/Sidebar/binIdle.svg";
+import Trash from "./Trash";
 import "./Sidebar.css";
 
-export default function Sidebar({ menu, handleMenu }) {
+export default function Sidebar({
+  handleTrashClick,
+  showTrash,
+  trash,
+  setTrash,
+}) {
   return (
-    <div className={`sidebar ${menu ? "open" : ""}`}>
+    <div className="sidebar">
       <ul>
         <li>
-          <a>
+          <a href="Notes">
             <img src={keepIdle} className="keepIdle" alt="Keep Idle logo" />
             <p>Notes</p>
           </a>
         </li>
 
         <li>
-          <a>
+          <a href="Reminders">
             <img src={bellIdle} className="bellIdle" alt="Bell Idle icon" />
             <p>Reminders</p>
           </a>
         </li>
 
         <li>
-          <a>
+          <a href="Archives">
             <img
               src={archiveIdle}
               className="archiveIdle"
@@ -35,7 +41,7 @@ export default function Sidebar({ menu, handleMenu }) {
         </li>
 
         <li>
-          <a>
+          <a href="#" onClick={handleTrashClick}>
             <img src={binIdle} className="binIdle" alt="Bin Idle icon" />
             <p>Bin</p>
           </a>
