@@ -7,7 +7,7 @@ import "./Header.css";
 import ToggleView from "./ToggleView";
 import ToggleTheme from "./ToggleTheme";
 
-export default function Header() {
+export default function Header({ selectedSection }) {
   const [view, setView] = useState(false);
   const [theme, setTheme] = useState(true);
 
@@ -31,7 +31,7 @@ export default function Header() {
         <div className="headerLeft">
           <img src={keepLogo} className="keepLogo" alt="Keep logo" />
 
-          <h3>Keep Clone</h3>
+          <h3>{selectedSection || "Keep Clone"}</h3>
         </div>
       </div>
       <div className="searchBar">

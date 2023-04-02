@@ -109,28 +109,28 @@ form textArea {
 }
 
 .addIcon {
-  position: fixed;
-  top: 130px;
-  left: 75%;
   height: 30px;
   width: 30px;
   align-items: center;
   align-content: center;
   cursor: pointer;
+  position: absolute;
+  top: 15px;
 }
 
 .addHover {
-  position: fixed;
-  top: 127px;
-  left: 74.75%;
   height: 36px;
   width: 36px;
   align-items: center;
   align-content: center;
   cursor: pointer;
+  position: absolute;
+  top: 12px;
 }
 
 .addNote {
+  position: absolute;
+  top: 10px;
   display: flex;
   align-items: center;
   transition: background-color 0.2s;
@@ -138,9 +138,7 @@ form textArea {
   height: 2.8em;
   width: 2.8em;
   border-radius: 50%;
-  position: fixed;
-  top: 122px;
-  left: 74.4%;
+  margin-left: 522px;
 }
 
 .addNote img:nth-child(2) {

@@ -4,13 +4,10 @@ import Header from "./components/Header";
 import NoteArea from "./components/NoteArea";
 import Sidebar from "./components/Sidebar";
 import Note from "./components/Note";
-import Trash from "./components/Trash";
 
 function App(props) {
   const [notes, setNotes] = useState([]);
-  const [trash, setTrash] = useState([]);
-  const [showTrash, setShowTrash] = useState(false);
-  const deletedNotes = trash.filter((note) => note.deleted);
+  const [selectedSection, setSelectedSection] = useState("");
 
   function addNote(newNote) {
     setNotes((prevNotes) => {
@@ -19,45 +16,31 @@ function App(props) {
   }
 
   function deleteNotes(id) {
-    const deletedNote = notes[id];
-
     setNotes((prevNotes) => {
       return [...prevNotes.filter((note, index) => index !== id)];
     });
-
-    setTrash((prevTrash) => {
-      return [...prevTrash, deletedNote];
-    });
   }
 
-  function handleTrashClick() {
-    setShowTrash(true);
-  }
+  const handleSectionChange = (section) => {
+    setSelectedSection(section);
+  };
 
   return (
     <div className="App">
-      <Header />
-      <Sidebar
-        handleTrashClick={handleTrashClick}
-        showTrash={showTrash}
-        trash={trash}
-        setTrash={setTrash}
-      />
-      <NoteArea onAdd={addNote} />
+      <Header selectedSection={selectedSection} />
+      <Sidebar handleSectionChange={handleSectionChange} />
+
       <div className="notes">
-        {showTrash ? (
-          <Trash trash={trash} setTrash={setTrash} notes={deletedNotes} />
-        ) : (
-          notes.map((note, index) => (
-            <Note
-              key={index}
-              id={index}
-              title={note.title}
-              content={note.content}
-              onDelete={deleteNotes}
-            />
-          ))
-        )}
+        <NoteArea onAdd={addNote} />
+        {notes.map((note, index) => (
+          <Note
+            key={index}
+            id={index}
+            title={note.title}
+            content={note.content}
+            onDelete={deleteNotes}
+          />
+        ))}
       </div>
     </div>
   );

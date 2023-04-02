@@ -57,12 +57,13 @@ h3 {
 .searchBar {
   display: flex;
   flex-direction: row;
+  position: fixed;
   align-items: center;
   background-color: rgba(85, 85, 85, 0.2);
   border: solid transparent;
   border-radius: 10px;
   width: 50%;
-  margin-left: 50px;
+  left: 25%;
   opacity: 0.4;
   max-height: 45px;
 }
@@ -92,6 +93,9 @@ h3 {
 }
 
 .headerRight {
+  position: fixed;
+  left: 80%;
+  top: 3%;
   display: flex;
   align-items: center;
   justify-content: flex-end;

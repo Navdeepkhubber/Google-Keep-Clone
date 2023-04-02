@@ -40,6 +40,20 @@ function NoteArea({ onAdd }) {
   return (
     <div className={expanded ? "expanded" : "notExpanded"}>
       <form>
+        <div className="addNote">
+          <img
+            src={addIcon}
+            className="addIcon"
+            alt="Add Note"
+            onClick={addButton}
+          />
+          <img
+            src={addHover}
+            className="addHover"
+            alt="Add Hover Note"
+            onClick={addButton}
+          />
+        </div>
         {expanded && (
           <input
             value={note.title}
@@ -61,20 +75,6 @@ function NoteArea({ onAdd }) {
         </p>
         <h3 onClick={handleClose}>Close</h3>
       </form>
-      <div className="addNote">
-        <img
-          src={addIcon}
-          className="addIcon"
-          alt="Add Note"
-          onClick={addButton}
-        />
-        <img
-          src={addHover}
-          className="addHover"
-          alt="Add Hover Note"
-          onClick={addButton}
-        />
-      </div>
     </div>
   );
 }
