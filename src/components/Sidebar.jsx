@@ -5,7 +5,11 @@ import archiveIdle from "/Sidebar/archiveIdle.svg";
 import binIdle from "/Sidebar/binIdle.svg";
 import "./Sidebar.css";
 
-export default function Sidebar({ handleSectionChange }) {
+export default function Sidebar({
+  handleSectionChange,
+  deletedNotes,
+  selectedSection,
+}) {
   const handleSectionClick = (event) => {
     const section = event.currentTarget.dataset.section;
     handleSectionChange(section);
@@ -46,6 +50,17 @@ export default function Sidebar({ handleSectionChange }) {
           </a>
         </li>
       </ul>
+      {selectedSection === "Bin" && deletedNotes && (
+        <div className="deletedNotes">
+          {deletedNotes.map((note, index) => (
+            <div className="deletedNote" key={index}>
+              <h3>{note.title}</h3>
+              <p>{note.content}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
       <div className="sourceCode">
         <a href="https://github.com/navdeepkhubber/google-keep-clone">Github</a>
       </div>

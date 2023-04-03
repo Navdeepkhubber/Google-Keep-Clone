@@ -124,13 +124,13 @@ form textArea {
   align-items: center;
   align-content: center;
   cursor: pointer;
-  position: absolute;
-  top: 12px;
+  position: fixed;
+  top: 15.85%;
 }
 
 .addNote {
   position: absolute;
-  top: 10px;
+  top: 8px;
   display: flex;
   align-items: center;
   transition: background-color 0.2s;
@@ -139,6 +139,14 @@ form textArea {
   width: 2.8em;
   border-radius: 50%;
   margin-left: 522px;
+}
+
+.expanded .addIcon {
+  top: 28px;
+}
+
+.expanded .addHover {
+  top: 18.4%;
 }
 
 .addNote img:nth-child(2) {
@@ -155,6 +163,11 @@ form textArea {
 
 .addNote:hover {
   background-color: rgba(191, 191, 191, 0.2);
+  margin-top: 20px;
+}
+
+.expanded .addNote:hover {
+  margin-top: 20px;
 }
 
 .notes {
