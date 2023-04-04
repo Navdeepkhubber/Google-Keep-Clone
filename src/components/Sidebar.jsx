@@ -9,6 +9,7 @@ export default function Sidebar({
   handleSectionChange,
   deletedNotes,
   selectedSection,
+  archivedNotes,
 }) {
   const handleSectionClick = (event) => {
     const section = event.currentTarget.dataset.section;
@@ -54,6 +55,16 @@ export default function Sidebar({
         <div className="deletedNotes">
           {deletedNotes.map((note, index) => (
             <div className="deletedNote" key={index}>
+              <h3>{note.title}</h3>
+              <p>{note.content}</p>
+            </div>
+          ))}
+        </div>
+      )}
+      {selectedSection === "Archives" && archivedNotes && (
+        <div className="archivedNotes">
+          {archivedNotes.map((note, index) => (
+            <div className="archivedNote" key={index}>
               <h3>{note.title}</h3>
               <p>{note.content}</p>
             </div>

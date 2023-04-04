@@ -17,6 +17,13 @@ function App(props) {
     return storeDeletedNotes ? JSON.parse(storeDeletedNotes) : [];
   });
 
+  const [archivedNotes, setArchivedNotes] = useState(() => {
+    const storeArchivedNotes = localStorage.getItem("archivedNotes");
+    return storeArchivedNotes ? JSON.parse(storeArchivedNotes) : [];
+  });
+
+  const [isArchived, setIsArchived] = useState({});
+
   const [isDeleted, setIsDeleted] = useState({});
 
   function addNote(newNote) {
@@ -45,6 +52,27 @@ function App(props) {
     });
   }
 
+  function archiveNotes(id) {
+    setArchivedNotes((prevArchivedNotes) => {
+      const archivedNote = notes[id];
+      const updatedArchivedNotes = [...prevArchivedNotes, archivedNote];
+      localStorage.setItem(
+        "archivedNotes",
+        JSON.stringify(updatedArchivedNotes)
+      );
+      return updatedArchivedNotes;
+    });
+    setNotes((prevNotes) => {
+      const updatedNotes = prevNotes.filter((note, index) => index !== id);
+      const updatedIsArchived = { ...isArchived };
+      updatedIsArchived[id] = true;
+      setIsArchived(updatedIsArchived);
+      localStorage.setItem("notes", JSON.stringify(updatedNotes));
+      localStorage.setItem("isArchived", JSON.stringify(updatedIsArchived));
+      return updatedNotes;
+    });
+  }
+
   function restoreNote(id) {
     setNotes((prevNotes) => {
       const restoredNote = deletedNotes[id];
@@ -58,6 +86,25 @@ function App(props) {
       );
       localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletedNotes));
       return updatedDeletedNotes;
+    });
+  }
+
+  function unArchiveNotes(id) {
+    setNotes((prevNotes) => {
+      const unArchivedNote = archivedNotes[id];
+      const updatedNotes = [...prevNotes, unArchivedNote];
+      localStorage.setItem("notes", JSON.stringify(updatedNotes));
+      return updatedNotes;
+    });
+    setArchivedNotes((prevArchivedNotes) => {
+      const updatedArchivedNotes = prevArchivedNotes.filter(
+        (note, index) => index !== id
+      );
+      localStorage.setItem(
+        "archivedNotes",
+        JSON.stringify(updatedArchivedNotes)
+      );
+      return updatedArchivedNotes;
     });
   }
 
@@ -96,25 +143,32 @@ function App(props) {
         deleteNotes={deletedNotes}
         onEmptyBin={handleEmptyBin}
         selectedSection={selectedSection}
+        archivedNotes={archivedNotes}
       />
 
       <div className="notes">
         <NoteArea onAdd={addNote} />
 
-        {(selectedSection !== "Bin" ? notes : deletedNotes).map(
-          (note, index) => (
-            <Note
-              key={index}
-              id={index}
-              title={note.title}
-              content={note.content}
-              onDelete={deleteNotes}
-              onRestore={restoreNote}
-              onPermanentlyDelete={permanentlyDeleteNote}
-              isDeleted={isDeleted[index]}
-            />
-          )
-        )}
+        {(selectedSection === "Archives"
+          ? archivedNotes
+          : selectedSection === "Bin"
+          ? deletedNotes
+          : notes
+        ).map((note, index) => (
+          <Note
+            key={index}
+            id={index}
+            title={note.title}
+            content={note.content}
+            onDelete={deleteNotes}
+            onRestore={restoreNote}
+            onPermanentlyDelete={permanentlyDeleteNote}
+            isDeleted={isDeleted[index]}
+            onArchive={archiveNotes}
+            isArchived={isArchived[index]}
+            onUnArchive={unArchiveNotes}
+          />
+        ))}
       </div>
     </div>
   );

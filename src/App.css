@@ -231,6 +231,44 @@ form textArea {
   right: 0;
 }
 
-.note .archiveIcon {
-  padding-right: 10px;
+.editIcons img {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.editIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 0;
+  right: 0;
+}
+
+.editBox {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.editBox input {
+  font-weight: 550;
+  margin-bottom: 6px;
+}
+
+.editBox textarea {
+  margin-top: 4px;
+  border: 1px solid red;
+  height: 20px;
+}
+
+.editBox input,
+textArea {
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  resize: none;
+  align-content: left;
 }
