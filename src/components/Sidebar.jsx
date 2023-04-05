@@ -61,17 +61,6 @@ export default function Sidebar({
           ))}
         </div>
       )}
-      {selectedSection === "Archives" && archivedNotes && (
-        <div className="archivedNotes">
-          {archivedNotes.map((note, index) => (
-            <div className="archivedNote" key={index}>
-              <h3>{note.title}</h3>
-              <p>{note.content}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
       <div className="sourceCode">
         <a href="https://github.com/navdeepkhubber/google-keep-clone">Github</a>
       </div>

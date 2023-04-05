@@ -35,17 +35,39 @@ function App(props) {
   }
 
   function deleteNotes(id) {
-    setDeletedNotes((prevDeletedNotes) => {
-      const deletedNote = notes[id];
-      const updatedDeletedNotes = [...prevDeletedNotes, deletedNote];
-      localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletedNotes));
-      return updatedDeletedNotes;
-    });
+    if (isArchived[id]) {
+      setArchivedNotes((prevArchivedNotes) => {
+        const updatedArchivedNotes = prevArchivedNotes.filter(
+          (note, index) => index !== id
+        );
+        localStorage.setItem(
+          "archivedNotes",
+          JSON.stringify(updatedArchivedNotes)
+        );
+        return updatedArchivedNotes;
+      });
+    } else {
+      setDeletedNotes((prevDeletedNotes) => {
+        const deletedNote = notes[id];
+        const updatedDeletedNotes = [...prevDeletedNotes, deletedNote];
+        localStorage.setItem(
+          "deletedNotes",
+          JSON.stringify(updatedDeletedNotes)
+        );
+        return updatedDeletedNotes;
+      });
+    }
     setNotes((prevNotes) => {
       const updatedNotes = prevNotes.filter((note, index) => index !== id);
       const updatedIsDeleted = { ...isDeleted };
       updatedIsDeleted[id] = true;
       setIsDeleted(updatedIsDeleted);
+      if (isArchived[id]) {
+        const updatedIsArchived = { ...isArchived };
+        delete updatedIsArchived[id];
+        setIsArchived(updatedIsArchived);
+        localStorage.setItem("isArchived", JSON.stringify(updatedIsArchived));
+      }
       localStorage.setItem("notes", JSON.stringify(updatedNotes));
       localStorage.setItem("isDeleted", JSON.stringify(updatedIsDeleted));
       return updatedNotes;
@@ -87,6 +109,12 @@ function App(props) {
       localStorage.setItem("deletedNotes", JSON.stringify(updatedDeletedNotes));
       return updatedDeletedNotes;
     });
+    setIsDeleted((prevIsDeleted) => {
+      const updatedIsDeleted = { ...prevIsDeleted };
+      delete updatedIsDeleted[id];
+      localStorage.setItem("isDeleted", JSON.stringify(updatedIsDeleted));
+      return updatedIsDeleted;
+    });
   }
 
   function unArchiveNotes(id) {
@@ -105,6 +133,12 @@ function App(props) {
         JSON.stringify(updatedArchivedNotes)
       );
       return updatedArchivedNotes;
+    });
+    setIsArchived((prevIsArchived) => {
+      const updatedIsArchived = { ...prevIsArchived };
+      delete updatedIsArchived[id];
+      localStorage.setItem("isArchived", JSON.stringify(updatedIsArchived));
+      return updatedIsArchived;
     });
   }
 

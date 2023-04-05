@@ -79,18 +79,18 @@ function Note({
 
           <div className="noteIcons">
             {isDeleted ? (
-              <>
+              <div className="deletedIcons">
                 <img src={restoreIcon} onClick={() => onRestore(id)} />
                 <img
                   src={permanentlyDeleteIcon}
                   onClick={() => onPermanentlyDelete(id)}
                 />
-              </>
+              </div>
             ) : isArchived ? (
-              <>
+              <div className="archivedIcons">
                 <img src={unArchiveIcon} onClick={() => onUnArchive(id)} />
                 <img src={deleteIcon} onClick={() => onDelete(id)} />
-              </>
+              </div>
             ) : (
               <>
                 <img src={deleteIcon} onClick={() => onDelete(id)} />

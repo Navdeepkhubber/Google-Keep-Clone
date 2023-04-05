@@ -247,6 +247,30 @@ form textArea {
   right: 0;
 }
 
+.deletedIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.deletedIcons img {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.archivedIcons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.archivedIcons img {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
 .editBox {
   display: flex;
   flex-direction: column;
@@ -260,7 +284,6 @@ form textArea {
 
 .editBox textarea {
   margin-top: 4px;
-  border: 1px solid red;
   height: 20px;
 }
 
