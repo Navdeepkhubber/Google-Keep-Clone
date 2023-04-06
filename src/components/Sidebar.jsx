@@ -27,13 +27,6 @@ export default function Sidebar({
         </li>
 
         <li>
-          <a data-section="Reminders" onClick={handleSectionClick}>
-            <img src={bellIdle} className="bellIdle" alt="Bell Idle icon" />
-            <p>Reminders</p>
-          </a>
-        </li>
-
-        <li>
           <a data-section="Archives" onClick={handleSectionClick}>
             <img
               src={archiveIdle}

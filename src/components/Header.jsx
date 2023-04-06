@@ -4,18 +4,10 @@ import menuLogo from "/public/menu.svg";
 import keepLogo from "/public/keep.svg";
 import searchLogo from "/public/search.svg";
 import "./Header.css";
-import ToggleView from "./ToggleView";
 import ToggleTheme from "./ToggleTheme";
 
 export default function Header({ selectedSection }) {
-  const [view, setView] = useState(false);
   const [theme, setTheme] = useState(true);
-
-  const handleView = () => {
-    setView((prevView) => {
-      return !prevView;
-    });
-  };
 
   const handleTheme = () => {
     setTheme((prevTheme) => {
@@ -40,7 +32,6 @@ export default function Header({ selectedSection }) {
         <textarea value="Search" className="search" />
       </div>
       <div className="headerRight">
-        <ToggleView view={view} handleView={handleView} />
         <ToggleTheme theme={theme} handleTheme={handleTheme} />
       </div>
     </div>

@@ -89,7 +89,6 @@ function Note({
             ) : isArchived ? (
               <div className="archivedIcons">
                 <img src={unArchiveIcon} onClick={() => onUnArchive(id)} />
-                <img src={deleteIcon} onClick={() => onDelete(id)} />
               </div>
             ) : (
               <>

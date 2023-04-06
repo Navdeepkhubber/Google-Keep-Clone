@@ -232,8 +232,8 @@ form textArea {
 }
 
 .editIcons img {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   cursor: pointer;
 }
 
@@ -254,8 +254,8 @@ form textArea {
 }
 
 .deletedIcons img {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   cursor: pointer;
 }
 
@@ -266,8 +266,8 @@ form textArea {
 }
 
 .archivedIcons img {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   cursor: pointer;
 }
 
@@ -280,11 +280,15 @@ form textArea {
 .editBox input {
   font-weight: 550;
   margin-bottom: 6px;
+  background-color: transparent;
+  color: black;
 }
 
 .editBox textarea {
   margin-top: 4px;
   height: 20px;
+  background-color: transparent;
+  color: black;
 }
 
 .editBox input,
