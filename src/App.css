@@ -170,6 +170,10 @@ form textArea {
   margin-top: 20px;
 }
 
+.notExpanded .addNote:hover {
+  margin-top: -6px;
+}
+
 .notes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -298,4 +302,58 @@ textArea {
   outline: none;
   resize: none;
   align-content: left;
+}
+
+@media screen and (max-width: 769px) {
+  #root {
+    max-width: 200px;
+  }
+  .expanded {
+    left: 100px;
+    width: 220px;
+  }
+  .notExpanded {
+    left: 100px;
+    width: 200px;
+  }
+  form input {
+    margin-left: -5px;
+  }
+  form textArea {
+    margin-left: -5px;
+  }
+
+  .addNote {
+    margin-left: 160px;
+  }
+  .expanded h3 {
+    display: block;
+    margin-top: -40px;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    margin-left: 72%;
+    text-align: left;
+    padding-top: 2px;
+    text-align: center;
+    padding-bottom: 8px;
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .addHover {
+    top: 19.85%;
+  }
+
+  .expanded h3 {
+    margin-left: 70%;
+    text-align: left;
+    padding-top: 2px;
+    text-align: center;
+    width: 50px;
+  }
+
+  .expanded .addHover {
+    top: 22.85%;
+  }
 }

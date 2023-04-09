@@ -6,7 +6,7 @@ import searchLogo from "/public/search.svg";
 import "./Header.css";
 import ToggleTheme from "./ToggleTheme";
 
-export default function Header({ selectedSection }) {
+export default function Header({ selectedSection, toggleSidebar }) {
   const [theme, setTheme] = useState(true);
 
   const handleTheme = () => {
@@ -18,7 +18,12 @@ export default function Header({ selectedSection }) {
   return (
     <div className="header">
       <div className="iconsLeft">
-        <img src={menuLogo} className="menuLogo" alt="Menu logo" />
+        <img
+          src={menuLogo}
+          className="menuLogo"
+          alt="Menu logo"
+          onClick={toggleSidebar}
+        />
 
         <div className="headerLeft">
           <img src={keepLogo} className="keepLogo" alt="Keep logo" />
@@ -29,7 +34,11 @@ export default function Header({ selectedSection }) {
       <div className="searchBar">
         <img src={searchLogo} className="searchLogo" alt="Search logo" />
 
-        <textarea value="Search" className="search" />
+        <textarea
+          value="Dummy Search"
+          placeholder="Search"
+          className="search"
+        />
       </div>
       <div className="headerRight">
         <ToggleTheme theme={theme} handleTheme={handleTheme} />

@@ -25,6 +25,7 @@
   gap: 5px;
   padding-bottom: 10px;
 }
+
 h3 {
   font-weight: 500;
   font-size: 22px;
@@ -103,17 +104,13 @@ h3 {
   gap: 30px;
 }
 
-.listView:hover,
-.gridView:hover,
 .lightMode:hover,
 .darkMode:hover {
   cursor: pointer;
 }
 
-.gridView,
-.lightMode,
 .darkMode,
-.listView {
+.lightMode {
   height: 22px;
   width: 22px;
 }
@@ -124,4 +121,58 @@ h3 {
 
 .dark {
   background-color: #202124;
+}
+
+@media screen and (max-width: 1100px) {
+  h3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  h3 {
+    display: none;
+  }
+
+  .menuLogo {
+    height: 16px;
+    width: 16px;
+    margin: 0 15px;
+    padding: 12px;
+  }
+
+  .keepLogo {
+    height: 30px;
+    width: 30px;
+  }
+
+  .searchLogo {
+    height: 22px;
+    width: 22px;
+  }
+
+  .headerRight {
+    position: fixed;
+    left: 80%;
+    top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 50px;
+    gap: 30px;
+  }
+
+  .searchBar {
+    left: 30%;
+  }
+
+  .headerRight {
+    left: 78%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .headerRight {
+    top: 3.5%;
+  }
 }

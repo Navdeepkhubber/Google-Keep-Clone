@@ -26,6 +26,12 @@ function App(props) {
 
   const [isDeleted, setIsDeleted] = useState({});
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prevState) => !prevState);
+  };
+
   function addNote(newNote) {
     setNotes((prevNotes) => {
       const updatedNotes = [...prevNotes, newNote];
@@ -171,13 +177,14 @@ function App(props) {
 
   return (
     <div className="App">
-      <Header selectedSection={selectedSection} />
+      <Header selectedSection={selectedSection} toggleSidebar={toggleSidebar} />
       <Sidebar
         handleSectionChange={handleSectionChange}
         deleteNotes={deletedNotes}
         onEmptyBin={handleEmptyBin}
         selectedSection={selectedSection}
         archivedNotes={archivedNotes}
+        isSidebarOpen={isSidebarOpen}
       />
 
       <div className="notes">

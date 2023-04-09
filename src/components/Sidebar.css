@@ -32,6 +32,13 @@
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
+.isSidebarOpen {
+  background-color: white;
+  width: 300px;
+  overflow: visible;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
 .bellIdle,
 .archiveIdle,
 .binIdle,
@@ -96,4 +103,31 @@ li p {
 a:hover {
   text-decoration: none;
   color: #5f6368;
+}
+
+@media screen and (max-width: 769px) {
+  .bellIdle,
+  .archiveIdle,
+  .binIdle,
+  .keepIdle {
+    padding-left: 25px;
+  }
+
+  li p {
+    width: 50px;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .isSidebarOpen {
+    width: 180px;
+  }
+
+  .sidebar:hover {
+    width: 180px;
+  }
+
+  .sourceCode {
+    margin-left: 80px;
+  }
 }

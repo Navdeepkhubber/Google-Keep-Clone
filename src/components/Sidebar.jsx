@@ -10,13 +10,14 @@ export default function Sidebar({
   deletedNotes,
   selectedSection,
   archivedNotes,
+  isSidebarOpen,
 }) {
   const handleSectionClick = (event) => {
     const section = event.currentTarget.dataset.section;
     handleSectionChange(section);
   };
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isSidebarOpen ? "isSidebarOpen" : ""}`}>
       <ul>
         <li>
           <a data-section="Notes" onClick={handleSectionClick}>
