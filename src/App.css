@@ -200,20 +200,28 @@ form textArea {
   box-shadow: 0 2px 5px rgb(128, 128, 128);
   padding: 10px;
   margin: 20px;
-  min-height: 50px;
+  min-height: 95px;
 }
 
 .note h1 {
   font-size: 1rem;
   margin-bottom: 6px;
   text-align: left;
-  color: black;
+  color: #5f6368;
+}
+
+.dark .note h1 {
+  color: #5f6368;
+}
+
+.dark .note p {
+  color: #5f6368;
 }
 
 .note p {
   font-size: 1rem;
   text-align: left;
-  color: black;
+  color: #5f6368;
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -304,21 +312,25 @@ textArea {
   align-content: left;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
   #root {
     max-width: 200px;
   }
+
   .expanded {
     left: 100px;
     width: 220px;
   }
+
   .notExpanded {
     left: 100px;
     width: 200px;
   }
+
   form input {
     margin-left: -5px;
   }
+
   form textArea {
     margin-left: -5px;
   }
@@ -326,17 +338,29 @@ textArea {
   .addNote {
     margin-left: 160px;
   }
+
   .expanded h3 {
     display: block;
-    margin-top: -40px;
-    font-size: 1rem;
-    margin-bottom: 6px;
     margin-left: 72%;
-    text-align: left;
-    padding-top: 2px;
-    text-align: center;
-    padding-bottom: 8px;
     width: 50px;
+  }
+
+  .notes {
+    position: absolute;
+    top: 120px;
+    left: 150px;
+    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 5px;
+    max-width: 300px;
+    width: 300px;
+    overflow-x: scroll;
+    max-height: 300px;
+    margin-left: -70px;
+  }
+
+  .note {
+    width: 212px;
+    min-height: 90px;
   }
 }
 
@@ -347,13 +371,74 @@ textArea {
 
   .expanded h3 {
     margin-left: 70%;
-    text-align: left;
-    padding-top: 2px;
-    text-align: center;
     width: 50px;
   }
 
   .expanded .addHover {
     top: 22.85%;
+  }
+
+  .notes {
+    top: 120px;
+    width: 280px;
+    top: 180px;
+    max-height: 200px;
+  }
+
+  .note {
+    width: 212px;
+    min-height: 85px;
+  }
+
+  .note .noteIcons {
+    bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 912px) {
+  .expanded {
+    left: 200px;
+    width: 500px;
+  }
+
+  .notExpanded {
+    left: 200px;
+    width: 500px;
+  }
+
+  form input {
+    margin-left: -5px;
+  }
+
+  form textArea {
+    margin-left: -5px;
+  }
+
+  .addNote {
+    margin-left: 440px;
+  }
+
+  .expanded h3 {
+    display: block;
+    margin-left: 87%;
+    width: 50px;
+  }
+
+  .notes {
+    position: absolute;
+    top: 120px;
+    left: 150px;
+    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 5px;
+    max-width: 300px;
+    width: 300px;
+    overflow-x: scroll;
+    max-height: 300px;
+    margin-left: -70px;
+  }
+
+  .note {
+    width: 212px;
+    min-height: 90px;
   }
 }

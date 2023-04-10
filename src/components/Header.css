@@ -96,7 +96,7 @@ h3 {
 .headerRight {
   position: fixed;
   left: 80%;
-  top: 3%;
+  top: 25px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -129,7 +129,7 @@ h3 {
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
   h3 {
     display: none;
   }
@@ -154,7 +154,7 @@ h3 {
   .headerRight {
     position: fixed;
     left: 80%;
-    top: 3%;
+    top: 2%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -164,6 +164,11 @@ h3 {
 
   .searchBar {
     left: 30%;
+  }
+
+  .searchBar textarea {
+    font-size: 14px;
+    margin-left: -10px;
   }
 
   .headerRight {

@@ -120,14 +120,28 @@ a:hover {
   }
 
   .isSidebarOpen {
+    z-index: 1;
     width: 180px;
   }
 
   .sidebar:hover {
+    z-index: 1;
     width: 180px;
+  }
+
+  .dark .sidebar:hover {
+    background-color: #202124;
+  }
+
+  .dark .isSidebarOpen {
+    background-color: #202124;
   }
 
   .sourceCode {
     margin-left: 80px;
+  }
+
+  li a {
+    width: 180px;
   }
 }
