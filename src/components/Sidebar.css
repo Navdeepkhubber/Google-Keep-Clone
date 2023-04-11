@@ -26,6 +26,7 @@
 }
 
 .sidebar:hover {
+  z-index: 1;
   background-color: white;
   width: 300px;
   overflow: visible;
@@ -33,6 +34,7 @@
 }
 
 .isSidebarOpen {
+  z-index: 1;
   background-color: white;
   width: 300px;
   overflow: visible;

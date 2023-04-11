@@ -116,54 +116,26 @@ form textArea {
   cursor: pointer;
   position: absolute;
   top: 15px;
-}
-
-.addHover {
-  height: 36px;
-  width: 36px;
-  align-items: center;
-  align-content: center;
-  cursor: pointer;
-  position: fixed;
-  top: 15.85%;
-}
-
-.addNote {
-  position: absolute;
-  top: 8px;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.2s;
-  justify-content: center;
-  height: 2.8em;
-  width: 2.8em;
-  border-radius: 50%;
-  margin-left: 522px;
+  left: 170px;
 }
 
 .expanded .addIcon {
-  top: 28px;
+  top: 18px;
+  left: 538px;
 }
 
-.expanded .addHover {
-  top: 18.4%;
+.notExpanded .addIcon {
+  top: 18px;
+  left: 538px;
 }
 
-.addNote img:nth-child(2) {
-  display: none;
-}
-
-.addNote:hover img:nth-child(1) {
-  display: none;
-}
-
-.addNote:hover img:nth-child(2) {
-  display: block;
-}
-
-.addNote:hover {
+.addIcon:hover {
   background-color: rgba(191, 191, 191, 0.2);
-  margin-top: 20px;
+  border-radius: 50%;
+  padding: 5px;
+  position: absolute;
+  top: 13px;
+  left: 533px;
 }
 
 .expanded .addNote:hover {
@@ -335,10 +307,6 @@ textArea {
     margin-left: -5px;
   }
 
-  .addNote {
-    margin-left: 160px;
-  }
-
   .expanded h3 {
     display: block;
     margin-left: 72%;
@@ -362,20 +330,50 @@ textArea {
     width: 212px;
     min-height: 90px;
   }
+
+  .addIcon {
+    position: absolute;
+    left: 175px;
+  }
+
+  .notExpanded .addIcon {
+    position: absolute;
+    margin-top: -2px;
+    left: 175px;
+    justify-content: center;
+  }
+
+  .notExpanded .addIcon:hover {
+    position: absolute;
+    top: 7px;
+    left: 165px;
+  }
+
+  .expanded .addIcon {
+    justify-content: center;
+    left: 175px;
+
+    top: 11px;
+  }
+
+  .expanded .addIcon:hover {
+    position: absolute;
+    top: 6px;
+    left: 170px;
+  }
+
+  .notExpanded .addIcon {
+    left: 170px;
+    justify-content: center;
+
+    top: 12px;
+  }
 }
 
 @media screen and (max-width: 400px) {
-  .addHover {
-    top: 19.85%;
-  }
-
   .expanded h3 {
     margin-left: 70%;
     width: 50px;
-  }
-
-  .expanded .addHover {
-    top: 22.85%;
   }
 
   .notes {
@@ -440,5 +438,29 @@ textArea {
   .note {
     width: 212px;
     min-height: 90px;
+  }
+
+  .notExpanded .addIcon {
+    left: 450px;
+    justify-content: center;
+    top: 18px;
+  }
+
+  .notExpanded .addIcon:hover {
+    position: absolute;
+    top: 13px;
+    left: 445px;
+  }
+
+  .expanded .addIcon {
+    left: 450px;
+    justify-content: center;
+    top: 11px;
+  }
+
+  .expanded .addIcon:hover {
+    position: absolute;
+    top: 6px;
+    left: 445px;
   }
 }
